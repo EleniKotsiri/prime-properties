@@ -1,10 +1,16 @@
 import Link from "next/link";
-import properties from "@/properties.json";
 import PropertyCard from "./PropertyCard";
+import connectDB from "@/config/database";
+import Property from "@/models/Property";
 
-const HomeProperties = () => {
-  const recentProperties = properties.slice(0, 3);
 
+const HomeProperties = async () => {
+  // connect to db
+  await connectDB();
+  const recentProperties = await Property.find({})
+    .sort({ createdAt: -1 }) // bring the most recently created
+    .limit(3) // show 3 of them
+    .lean() // bring them as plain javascript objects
   return (
     <>
       <section className="px-4 py-6">
@@ -12,7 +18,7 @@ const HomeProperties = () => {
           <h2 className="text-3xl font-bold text-blue-500 mb-6 text-center">
             Recent Properties
           </h2>
-          {properties.length === 0 ? (
+          {recentProperties.length === 0 ? (
             <p> No properties found. </p>
           ) : (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
