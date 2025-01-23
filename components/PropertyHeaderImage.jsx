@@ -6,7 +6,7 @@ const PropertyHeaderImage = ({image}) => {
       <div className="container-xl m-auto">
         <div className="grid grid-cols-1">
           <Image
-            src={`/images/properties/${image}`} // it's looking for an image inside the public folder
+            src={image} 
             alt="Property header image"
             className="object-cover h-[400px] w-full"
             width={0}
