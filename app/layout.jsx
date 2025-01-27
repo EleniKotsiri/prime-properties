@@ -2,6 +2,8 @@ import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/components/AuthProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Toastify css
 
 export const metadata = {
   title: 'Prime Properties',
@@ -16,6 +18,7 @@ const MainLayout = ({ children }) => {
         <body>
           <Navbar />
           <main>{ children }</main>
+          <ToastContainer /> {/* Doesn't matter where we put it, it's positioned absolute */}
           <Footer />
         </body>
       </html>

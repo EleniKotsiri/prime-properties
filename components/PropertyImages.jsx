@@ -1,3 +1,4 @@
+// Display all images in detail page
 import Image from "next/image";
 
 const PropertyImages = ({ images }) => {

@@ -1,3 +1,4 @@
+// Connect to MongoDB database
 import mongoose from "mongoose";
 
 let connected = false;
