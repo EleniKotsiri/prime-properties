@@ -13,10 +13,10 @@ const UserSchema = new Schema({
   image: {
     type: String
   },
-  bookmarks: {
+  bookmarks: [{
     type: Schema.Types.ObjectId, // that type means it has a relationship to a model (property)
     ref: 'Property' // which model does it have a relationship with
-  }
+  }]
 }, 
 {
   timestamps: true
