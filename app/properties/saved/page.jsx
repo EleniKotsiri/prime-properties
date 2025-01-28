@@ -14,7 +14,7 @@ const SavedPropertiesPage = async () => {
 
   return (
     <section className="px-4 py-6">
-      <div className="container m-auto px-4 py-6 lg:container">
+      <div className="container-xl m-auto px-4 py-6 lg:container">
         <h1 className="text-2xl mb-4">
           Saved Properties
         </h1>
