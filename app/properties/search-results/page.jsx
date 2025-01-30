@@ -55,8 +55,8 @@ const SearchResultsPage = async ({ searchParams }) => {
           <p>No search results</p>
         ) : (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {properties.map((property, index) => (
-              <PropertyCard key={index} property={property} />
+            {properties.map((property) => (
+              <PropertyCard key={property._id} property={property} />
             ))}
           </div>
         )}

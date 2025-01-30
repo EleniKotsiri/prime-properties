@@ -22,8 +22,8 @@ const SavedPropertiesPage = async () => {
           <p>No saved properties.</p>
           ) : (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              { bookmarks.map((property, index) => (
-                <PropertyCard key={index} property={property} />
+              { bookmarks.map((property) => (
+                <PropertyCard key={property._id} property={property} />
               ))}
             </div>
           )

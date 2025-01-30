@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import AuthProvider from '@/components/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Toastify css
+import { GlobalProvider } from '@/context/GlobalContext';
 
 export const metadata = {
   title: 'Prime Properties',
@@ -14,14 +15,16 @@ export const metadata = {
 const MainLayout = ({ children }) => {
   return (
     <AuthProvider>
-      <html>
-        <body>
-          <Navbar />
-          <main>{ children }</main>
-          <ToastContainer /> {/* Doesn't matter where we put it, it's positioned absolute */}
-          <Footer />
-        </body>
-      </html>
+      <GlobalProvider>
+        <html>
+          <body>
+            <Navbar />
+            <main>{ children }</main>
+            <ToastContainer /> {/* Doesn't matter where we put it, it's positioned absolute */}
+            <Footer />
+          </body>
+        </html>
+      </GlobalProvider>
     </AuthProvider>
   );
 };
