@@ -28,7 +28,7 @@ const TermsContactForm = () => {
   }
 
   return (
-    session && (
+    session ? (
       <div className="bg-white p-6 rounded-lg shadow-md mx-auto max-w-lg mt-10 md:max-w-2xl md:mt-14 xl:max-w-6xl">
         <h3 className="text-xl font-bold mb-6">Contact Us</h3>
         <form action={formAction}>
@@ -83,6 +83,8 @@ const TermsContactForm = () => {
           </div>
         </form>
       </div>
+    ) : (
+      <h2 className="text-xl font-bold ml-3 mt-6">You need to be logged in to contact us.</h2>
     )
   );
 };
