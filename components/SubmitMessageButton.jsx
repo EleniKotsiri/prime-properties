@@ -11,7 +11,7 @@ const SubmitMessageButton = () => {
       disabled={pending}
     >
       <FaPaperPlane className="mr-2" /> {' '}
-      {pending ? 'Sennding...' : 'Send Message'}
+      {pending ? 'Sending...' : 'Send Message'}
     </button>
   )
 }

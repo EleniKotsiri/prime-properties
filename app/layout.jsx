@@ -17,10 +17,10 @@ const MainLayout = ({ children }) => {
   return (
     <AuthProvider>
       <GlobalProvider>
-        <html>
-          <body>
+        <html className="h-full">
+          <body className="flex flex-col min-h-screen">
             <Navbar />
-            <main>{ children }</main>
+            <main className="flex-1">{ children }</main>
             <ToastContainer /> {/* Doesn't matter where we put it, it's positioned absolute */}
             <Footer />
           </body>
