@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Toastify css
 import { GlobalProvider } from '@/context/GlobalContext';
 import 'photoswipe/dist/photoswipe.css';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'Prime Properties',
@@ -23,6 +24,7 @@ const MainLayout = ({ children }) => {
             <main className="flex-1">{ children }</main>
             <ToastContainer /> {/* Doesn't matter where we put it, it's positioned absolute */}
             <Footer />
+            <Analytics />
           </body>
         </html>
       </GlobalProvider>
