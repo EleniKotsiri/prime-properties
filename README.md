@@ -3,10 +3,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 A modern property listing platform built with Next.js, MongoDB, and Tailwind CSS. Users can browse, list, and inquire about properties seamlessly.
 
-## 🚀 Live Demo  
+## Live Demo  
 [🔗 View the site on Vercel](https://prime-properties-beryl.vercel.app/)
 
-## 🛠 Tech Stack
+## Tech Stack
 - **Frontend:** Next.js, React, Tailwind CSS  
 - **Backend:** Next.js Server Actions, MongoDB  
 - **Authentication:** NextAuth.js (Google OAuth)  
@@ -14,7 +14,7 @@ A modern property listing platform built with Next.js, MongoDB, and Tailwind CSS
 - **Maps Integration:** MapTiler  
 - **Deployment:** Vercel
 
-## 📥 Installation & Setup
+## Installation & Setup
 
 1. Clone the repository:
  ```sh
@@ -63,15 +63,15 @@ npm run dev
 The app will be available at http://localhost:3000.
 
 ## Features
-- 🏠 List and browse properties
-- 💬 Contact property owners directly
-- 🔑 User authentication via Google OAuth (NextAuth.js)
-- 📸 Upload and manage images using Cloudinary
-- 🗺️ Map integration with MapTiler
-- 📩 Messaging system for inquiries
-- 📱 Responsive and mobile-friendly design
+- List and browse properties
+- Contact property owners directly
+- User authentication via Google OAuth (NextAuth.js)
+- Upload and manage images using Cloudinary
+- Map integration with MapTiler
+- Messaging system for inquiries
+- Responsive and mobile-friendly design
 
-🚀 Deployment
+## Deployment
 The app is deployed on Vercel. To deploy your own version:
 1. Push your code to a GitHub repository.
 2. Connect the repository to Vercel.
