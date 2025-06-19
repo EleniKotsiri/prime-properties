@@ -17,7 +17,10 @@ import Spinner from './Spinner';
 const PropertyMap = ({ property }) => {
   const [loading, setLoading] = useState(true);
   const [geocodeError, setGeocodeError] = useState(false);
-  const [map, setMap] = useState(null);
+  // const [map, setMap] = useState(null);
+
+  const mapRef = useRef(null); // to hold map instance
+  const mapContainerRef = useRef(null); // DOM element reference
 
   useEffect(() => {
     const fetchCoords = async () => {
@@ -40,13 +43,18 @@ const PropertyMap = ({ property }) => {
         const [lng, lat] = data.features[0].geometry.coordinates;
 
         // If a map instance already exists, clean it up
-        if (map) {
-          map.setTarget(null);
+        // if (map) {
+        //   map.setTarget(null);
+        // }
+        if (mapRef.current) {
+          mapRef.current.setTarget(null);
+          mapRef.current = null;
         }
 
         // Initialize map
         const mapInstance = new Map({
-          target: 'map',
+           // target: 'map',
+          target: mapContainerRef.current,
           layers: [
             // Base Tile Layer from MapTiler
             new TileLayer({
@@ -79,7 +87,11 @@ const PropertyMap = ({ property }) => {
           }),
         });
 
-        setMap(mapInstance);
+        // setMap(mapInstance);
+        mapRef.current = mapInstance;
+        setTimeout(() => {
+          mapRef.current.updateSize();
+        }, 1000); // Give DOM time to layout
       } catch (error) {
         console.error('Error fetching geocoding data:', error);
         setGeocodeError(true);
@@ -92,8 +104,12 @@ const PropertyMap = ({ property }) => {
 
     // Cleanup map on unmount
     return () => {
-      if (map) {
-        map.setTarget(null);
+       // if (map) {
+      //   map.setTarget(null);
+      // }
+      if (mapRef.current) {
+        mapRef.current.setTarget(null);
+        mapRef.current = null;
       }
     };
   }, [property]);
@@ -105,7 +121,8 @@ const PropertyMap = ({ property }) => {
 
   return (
     <div
-      id="map"
+      // id="map"
+      ref={mapContainerRef}
       style={{
         width: '100%',
         height: '500px',
