@@ -6,6 +6,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Toastify css
 import { GlobalProvider } from '@/context/GlobalContext';
 import 'photoswipe/dist/photoswipe.css';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/utils/authOptions';
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
@@ -14,9 +16,11 @@ export const metadata = {
   description: 'Find the perfect rental property'
 };
 
-const MainLayout = ({ children }) => {
+const MainLayout = async ({ children }) => {
+  const session = await getServerSession(authOptions);
+
   return (
-    <AuthProvider>
+    <AuthProvider session={session}>
       <GlobalProvider>
         <html className="h-full">
           <body className="flex flex-col min-h-screen">
