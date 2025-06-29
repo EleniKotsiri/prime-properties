@@ -6,7 +6,7 @@ const InfoBoxes = () => {
       <div className="container-xl lg:container m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
           <InfoBox 
-            heading={"For renters"} 
+            heading={"For Renters"} 
             buttonText={"Browse Properties"}
             buttonInfo={{
               text: 'Browse Properties',
@@ -18,7 +18,7 @@ const InfoBoxes = () => {
             owners.
           </InfoBox>
           <InfoBox
-            heading={"For renters"}
+            heading={"For Property Owners"}
             buttonText={"Add Property"}
             backgroundColor="bg-blue-100"
             buttonInfo={{
