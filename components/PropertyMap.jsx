@@ -77,8 +77,8 @@ const PropertyMap = ({ property }) => {
                 }),
                 style: new Style({
                   image: new Icon({
-                    src: "/images/pin.svg", // Replace with your marker icon path
-                    scale: 0.05, // Scale the icon
+                    src: "/images/pin.svg",
+                    scale: 0.05,
                   }),
                 }),
               }),
